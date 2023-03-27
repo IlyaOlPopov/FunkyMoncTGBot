@@ -1,9 +1,14 @@
 import random
+import os
+import dotenv
+
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command, Text
 from aiogram.types import Message
 
-API_TOKEN: str = '6264084630:AAGWsw7_dxh8EA3BiwyJ1Y070YkE9u-FrhM'
+dotenv.load_dotenv()
+API_TOKEN: str = os.getenv('BOT_TOKEN')
+print(API_TOKEN)
 
 # Создаем объекты бота и диспетчера
 bot: Bot = Bot(token=API_TOKEN)
